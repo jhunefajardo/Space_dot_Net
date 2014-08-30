@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Space Test Home</title>
+	
+	<!-- boostrap modal START-->
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/prettify.css" rel="stylesheet" />
+	
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" />
+	<link href="css/bootstrap-modal.css" rel="stylesheet" />
+	<!-- boostrap modal END-->
+	
+	
+	
+	<script type="text/javascript" src="js/jq.js"></script><!-- jquery script -->
+	<link rel="stylesheet" href="css/style-custom.css"><!-- custom style -->
+	<script type="text/javascript" src="js/quizArray.js"></script>
+	<style>
+	body{
+		background:url('img/bg.png')no-repeat top center;
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		back-position:center;
+		}
+		#storeQuizArray{
+		display:none;
+		}
+		#h1{
+		
+		color:White;
+		font-family:Goudy Stout;
+		}
+	
+	
+	#header{
+	margin-top:10%;
+	
+	
+	}
+	#logo{
+	margin-bottom: 195px;
+		margin-left: 175px;
+		
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="index_modal_container" class="index_modal_container modal hide fade" data-backdrop="static" tabindex="-1" data-keyboard="false">
+		</div>	
+	<div id="splashScreen">	</div>
+	<div class="splashImg"><img class="splashImgLogo" src="img/splashscreen.png" alt="" class="img-thumbnail"/></div>
+	
+	
+		<
+	<center>
+		<img src="img/logo.png" height="180" width="170" id="logo"></img>
+
+		<input id="btn-play" type="button" value="PLAY" /><br />
+		<input id="btn-leaderboard" type="button" value="LEADERBOARD" /><br />
+		<p id="txt-username"></p>
+		<input id="btn-login" class="btn-login" type="button" value="LOGIN" /><br />
+	</center>
+	
+	
+	
+	
+	
+	<script type="text/javascript" src="js/jq-custom.js"></script><!--custom jq script for for functions and variables-->
+	<!-- boostrap modal JS  START-->
+	<script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/prettify.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-modalmanager.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+	<!-- boostrap modal JS  END-->
+	
+	<script id="storeQuizArray"type="text/javascript">
+		$(document).ready(function(){
+			
+			splashScreenIntro();//splash screen function --index.html
+			checkIfLogin();//--index.html
+			storeQuizArrayToLocalStorage();//store quizArray to localStorage --index.html
+		
+		});
+		
+	</script>
+	<script id="ajax" type="text/javascript">
+		var $modal = $('#index_modal_container');
+
+		$('#test').on('click', function(){
+		  // create the backdrop and wait for next modal to be triggered
+		  //$('body').modalmanager('loading');<!-- para sa loading-->
+
+		  setTimeout(function(){
+			 $modal.load('game_over_page.html', '', function(){
+			  $modal.modal();
+			});
+		  },10);<!-- time -->
+		});
+
+		
+	</script>
+	
+</body>
+</html>
